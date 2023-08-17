@@ -5,6 +5,7 @@
 .nitro
 .cache
 dist
+copy . /usr/src/nuxt-app/
 
 # Node dependencies
 node_modules

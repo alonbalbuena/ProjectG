@@ -1,0 +1,40 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies for environment with asdf in .tool-versions
+        uses: asdf-vm/actions/install@v2
+
+      - name: List workspace
+        run: ls
+
+      - name: Go inside frontend folder
+        run: cd ./frontend && ls
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Nuxt.js
+        run: npm run generate
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git checkout --orphan gh-pages
+          git rm -rf .
+          mv dist/* .
+          git add .
+          git commit -m "Deploy Nuxt.js to GitHub Pages"
+          git push -f origin gh-pages

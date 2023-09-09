@@ -1,17 +1,21 @@
 <script setup lang="ts">
-import Button from 'primevue/button'
+import Button from "primevue/button";
 </script>
 
 <template>
   <div class="buttons">
     <Button label="Quick Match" />
     <Button label="Join" link />
-    <Button label="Create" link />
+    <NuxtLink to="/sign">
+      <Button
+label="Create" link
+/>
+    </NuxtLink>
   </div>
 </template>
 
 <style scoped>
-.buttons{
+.buttons {
   display: flex;
   flex-direction: column;
   padding: 0 20vw;

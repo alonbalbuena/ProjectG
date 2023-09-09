@@ -10,12 +10,25 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@pinia/nuxt": "^0.4.11",
     "@types/node": "^18.17.3",
-    "nuxt": "^3.6.5"
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "nuxt": "^3.6.5",
+    "pinia": "^2.1.6",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
   },
   "dependencies": {
     "@nuxtjs/google-fonts": "^3.0.2",
     "primeicons": "^6.0.1",
     "primevue": "^3.32.2"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }

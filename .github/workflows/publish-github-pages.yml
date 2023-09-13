@@ -8,6 +8,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./frontend
 
     steps:
       - name: Checkout code
@@ -16,14 +20,8 @@ jobs:
       - name: Install dependencies for environment with asdf in .tool-versions
         uses: asdf-vm/actions/install@v2
 
-      - name: List workspace
-        run: ls
-
       - name: See node version
         run: node -v
-
-      - name: Go inside frontend folder
-        run: cd ./frontend
 
       - name: list files inside frontend folder
         run: ls -a

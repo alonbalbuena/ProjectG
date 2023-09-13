@@ -23,7 +23,10 @@ jobs:
         run: node -v
 
       - name: Go inside frontend folder
-        run: cd ./frontend && ls
+        run: cd ./frontend
+
+      - name: list files inside frontend folder
+        run: ls -a
 
       - name: Install dependencies
         run: npm install

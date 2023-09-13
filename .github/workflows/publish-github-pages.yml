@@ -19,6 +19,9 @@ jobs:
       - name: List workspace
         run: ls
 
+      - name: See node version
+        run: node -v
+
       - name: Go inside frontend folder
         run: cd ./frontend && ls
 

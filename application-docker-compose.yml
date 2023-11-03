@@ -1,0 +1,6 @@
+version: '2.20.3'
+spring:
+  docker:
+    compose:
+      enabled: true
+      file: ./compose.yml
